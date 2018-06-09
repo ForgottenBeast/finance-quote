@@ -141,7 +141,7 @@ sub bourso {
             print "symbol: ".$symbol."\n";
 
             # retrieve NAME
-            my @nameline = $tree->look_down( 'class', 'fv-name' );
+            my @nameline = $tree->look_down( 'class', 'c-faceplate__company-link' );
 
             unless (@nameline) {
                 $info{ $stocks, "success" } = 0;
