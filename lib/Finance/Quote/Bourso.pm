@@ -153,6 +153,8 @@ sub bourso {
             my $name = $nameline[0]->as_text;
             $info{ $stocks, "name" } = $name;
 
+            print "name: ".$name."\n";
+
             # set method
             $info{ $stocks, "method" } = "bourso";
 
