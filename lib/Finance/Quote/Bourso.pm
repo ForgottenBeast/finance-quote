@@ -77,7 +77,7 @@ use HTML::TreeBuilder
 
 # VERSION
 
-my $Bourso_URL = 'http://www.boursorama.com/recherche/index.phtml';
+my $Bourso_URL = 'http://www.boursorama.com/recherche/';
 
 sub methods {
     return ( france => \&bourso,
@@ -114,8 +114,7 @@ sub bourso {
     foreach my $stocks (@stocks) {
         my $queryUrl =
               $url
-            . join( '', "?q=", $stocks )
-            . "&search[type]=rapide&search[categorie]=STK&search[bourse]=country:33";
+            . $stocks ;
         $reply = $ua->request( GET $queryUrl);
 
         # print "URL=".$queryUrl."\n";
