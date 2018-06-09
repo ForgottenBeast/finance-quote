@@ -117,7 +117,7 @@ sub bourso {
             . $stocks ;
         $reply = $ua->request( GET $queryUrl);
 
-        # print "URL=".$queryUrl."\n";
+        print "URL=".$queryUrl."\n";
 
         if ( $reply->is_success ) {
 
