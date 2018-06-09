@@ -138,6 +138,7 @@ sub bourso {
             my $symbol = ( $symbolline[0]->content_list )[0];
             ($symbol) = ( $symbol =~ m/(\w+)/ );
             $info{ $stocks, "symbol" } = $symbol;
+            print "symbol: ".$symbol."\n";
 
             # retrieve NAME
             my @nameline = $tree->look_down( 'class', 'fv-name' );
