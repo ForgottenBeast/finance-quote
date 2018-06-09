@@ -127,7 +127,7 @@ sub bourso {
             my $tree = HTML::TreeBuilder->new_from_content( $reply->content );
 
             # retrieve SYMBOL
-            my @symbolline = $tree->look_down( 'class', 'seoinline fv-isin ellipsis' );
+            my @symbolline = $tree->look_down( 'class', 'c-faceplate__isin' );
 
             unless (@symbolline) {
                 $info{ $stocks, "success" }  = 0;
