@@ -164,8 +164,13 @@ sub bourso {
             # retrieve other data
             my $infoclass = ( $tree->look_down( 'class', 'c-faceplate__quotation c-faceplate__quotation--open-close' ) )[0];
             unless ($infoclass) {
+                
+                foreach ($tree->look_down('class','c-faceplate__real-time')->content()){
+                    print "array:".$_;
+                }
                 my $opcvm =
                     $tree->look_down( 'class', 'c-faceplate__real-time')->content();# =~ /OPCVM/;
+                print "myopcvm = ".$opcvm;
                 unless ($opcvm) {
                     $info{ $stocks, "success" } = 0;
                     $info{ $stocks, "errormsg" } =
@@ -229,7 +234,7 @@ sub bourso {
 
             foreach my $key ( keys %tempinfo ) {
 
-                # print "$key -> $tempinfo{$key}\n";
+                 print "$key -> $tempinfo{$key}\n";
 
             ASSIGN: for ($key) {
 
