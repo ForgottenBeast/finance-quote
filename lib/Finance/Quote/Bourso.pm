@@ -162,10 +162,10 @@ sub bourso {
             my %tempinfo;
 
             # retrieve other data
-            my $infoclass = ( $tree->look_down( 'class', 'fv-extras' ) )[0];
+            my $infoclass = ( $tree->look_down( 'class', 'c-faceplate__quotation c-faceplate__quotation--open-close' ) )[0];
             unless ($infoclass) {
                 my $opcvm =
-                    ( $tree->look_down( 'class', 'opcvm-partners block' ) )[0];
+                    $tree->look_down( 'class', 'c-faceplate__real-time')->content();# =~ /OPCVM/;
                 unless ($opcvm) {
                     $info{ $stocks, "success" } = 0;
                     $info{ $stocks, "errormsg" } =
